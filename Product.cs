@@ -9,9 +9,15 @@ namespace TravisB_P0
 {
     public class Product
     {
-        private int _productID;
-        private string _productName;
-        private string _productDescription;
+        public Products productName{ get; }
+        private int quantity;
+
+        public Product(Products Item, int quantity)
+        {
+            this.productName = Item;
+            this.quantity = quantity;
+        }
+
         
     }
 }

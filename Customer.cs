@@ -11,13 +11,14 @@ namespace TravisB_P0
     {
         private string _firstName;
         private string _lastName;
-        private string _email;
-        public Customer(string firstName, string lastName, string email) : base(firstName, lastName, email)
+        public Customer(string firstName, string lastName) : base(firstName, lastName)
         {
             this._firstName = firstName;
             this._lastName = lastName;
-            this._email = email;
         }
+
+        public string firstName { get { return _firstName; } }
+        public string lastName { get { return _lastName;} }
 
 
     }

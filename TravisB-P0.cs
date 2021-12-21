@@ -11,7 +11,11 @@ namespace TravisB_P0
     {
         static void Main()
         {
-
+            string first;
+            string last;
+            Customer thisCustomer = new Customer(string first, string last);
+            Order thisOrder = new Order();
+            thisOrder.FinalizeOrder(thisCustomer, Locations.MapleGrove);
         }
     }
 }

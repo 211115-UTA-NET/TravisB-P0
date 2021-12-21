@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 
 namespace TravisB_P0
 {
-    public enum Locations
+    public enum Products
     {
-        MapleGrove = 1,
-        Plymouth = 2, 
-        Robbinsdale = 3, 
-        Minneapolis = 4
+        Cheese = 1,
+        Pepperoni = 2,
+        Hawaiian = 3,
+        Alfredo = 4,
+        Deluxe = 5
     }
 }

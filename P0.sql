@@ -1,8 +1,7 @@
 CREATE TABLE Locations
 (
     StoreID TINYINT PRIMARY KEY,
-    City NVARCHAR(25) NOT NULL,
-    Manager NVARCHAR(100) NOT NULL,
+    City NVARCHAR(25) NOT NULL
 )
 
 CREATE TABLE Inventory
@@ -33,18 +32,29 @@ VALUES
     (5, 1, 150);
 
 INSERT INTO Locations
-(StoreID, City, Manager)
+(StoreID, City)
 VALUES
-(1, 'Minneapolis', 'Jim Helsinki'),
-(2, 'Robbinsdale', 'Terri McCollough'),
-(3, 'Plymouth', 'Jameson Catterly'),
-(4, 'Maple Grove', 'Dianne Potterton');
+(1, 'Minneapolis'),
+(2, 'Robbinsdale'),
+(3, 'Plymouth'),
+(4, 'Maple Grove');
 
 INSERT INTO Items
 (ItemID, ItemName, ItemDescrip)
 VALUES
-(1, '', ''),
-(2, '', ''),
-(3, '', ''),
-(4, '', ''),
-(5, '', '');
+(1, 'Cheese', 'A delicious mix of provolone and mozzarella cheeses.'),
+(2, 'Pepperoni', 'Delicious cheese pizza with an extra friend, the pepperoni slice.'),
+(3, 'Hawaiian', 'A contentious pizza with many detractors. Pineapple and Canadian bacon on mozzarella cheese.'),
+(4, 'Alfredo', 'Grilled chicken slices and onion atop a bed of mozzarella and feta cheeses and white alfredo sauce.'),
+(5, 'Deluxe', 'A delicious mix of mozzarella cheese layered on top with green peppers, black olives and onions.');
+
+
+CREATE TABLE Customers
+(
+    CustomerID SMALLINT IDENTITY PRIMARY KEY,
+    FirstName NVARCHAR(100) NOT NULL,
+    LastName NVARCHAR(100) NOT NULL
+)
+
+ALTER TABLE Locations
+DROP COLUMN Manager

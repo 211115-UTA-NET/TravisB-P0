@@ -9,7 +9,9 @@ namespace TravisB_P0
 {
     public interface IOrder
     {
-        void AddToCart(string productName, int quantity);
-        void FinalizeOrder();
+        void AddToCart(Order order,Product selection);
+        void FinalizeOrder(Order order, Customer customer);
+        void AddToHistory(Order order);
+        float Total(List<Product> cart);
     }
 }
