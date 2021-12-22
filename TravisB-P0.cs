@@ -26,6 +26,7 @@ namespace TravisB_P0
                 else if (location == "Hopkins" || location == "Robbinsdale" || location == "Plymouth" || location == "Minneapolis")
                 {
                     locationChoice = (Locations)Enum.Parse(typeof(Locations), location);
+                    gotLocation = true;
                 }
                 else
                 {
@@ -33,8 +34,7 @@ namespace TravisB_P0
                 }
             }
 
-
-            DBInterface.GettingMenu();
+            //getting Customer name
             string name = "";
             bool gotName = false;
             do
@@ -48,9 +48,9 @@ namespace TravisB_P0
                 {
                     gotName = true;
                 }
-
             } while (gotName != true);
 
+            DBInterface.GettingMenu();
 
             bool done = false;
             List<Product> cart = new();

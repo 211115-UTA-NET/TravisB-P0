@@ -26,18 +26,18 @@ namespace TravisB_P0
 
         public void AddToCart()
         {
-            Console.WriteLine("Please specify what you would like to order, or press enter if done ordering");
+            Console.WriteLine("\nPlease specify what you would like to order, or enter done if done ordering");
             string selection = Console.ReadLine()!;
             
-            if (selection == null)
+            if (selection == "done")
             {
                 return;
             }
-            else if (selection == "cheese" || selection == "pepperoni" || selection == "hawaiian" || selection == "alfredo" || selection == "deluxe")
+            else if (selection == "Cheese" || selection == "Pepperoni" || selection == "Hawaiian" || selection == "Alfredo" || selection == "Deluxe")
             {
                 Products productSelection = (Products)Enum.Parse(typeof(Products), selection);
 
-                Console.WriteLine("How many would you like to order?");
+                Console.WriteLine("How many would you like to order?\n");
                 string number = Console.ReadLine()!;
                 bool isNumber = int.TryParse(number, out int quantity);
                 if (isNumber)

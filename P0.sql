@@ -64,3 +64,24 @@ CREATE TABLE Orders
     QuantityOrdered SMALLINT NOT NULL,
     PRIMARY KEY (OrderID, ItemID)
 );
+
+INSERT INTO Inventory
+(ItemID, StoreID, Quantity)
+VALUES
+    (1, 2, 500),
+    (2, 2, 500),
+    (3, 2, 150),
+    (4, 2, 150),
+    (5, 2, 150),
+    (1, 3, 500),
+    (2, 3, 500),
+    (3, 3, 150),
+    (4, 3, 150),
+    (5, 3, 150),
+    (1, 4, 500),
+    (2, 4, 500),
+    (3, 4, 150),
+    (4, 4, 150),
+    (5, 4, 150);
+
+SELECT ItemName, ItemDescrip, ItemPrice FROM Items;

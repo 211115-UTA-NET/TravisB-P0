@@ -26,7 +26,7 @@ namespace TravisB_P0
             connection.Close();
 
             //Writing menu to the console
-            Console.WriteLine(menu.TableName);
+            Console.WriteLine($"\n{menu.TableName}\n");
 
             foreach (DataRow dr in menu.Rows)
             {
