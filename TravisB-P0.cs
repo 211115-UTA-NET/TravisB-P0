@@ -11,11 +11,58 @@ namespace TravisB_P0
     {
         static void Main()
         {
-            string first;
-            string last;
-            Customer thisCustomer = new Customer(string first, string last);
-            Order thisOrder = new Order();
-            thisOrder.FinalizeOrder(thisCustomer, Locations.MapleGrove);
+
+            Locations locationChoice = new Locations();
+
+            bool gotLocation = false;
+            while (gotLocation != true)
+            {
+                Console.WriteLine("What location would you like to pick up at?");
+                string location = Console.ReadLine()!;
+                if (location == null)
+                {
+                    Console.WriteLine("Please enter a location");
+                }
+                else if (location == "Hopkins" || location == "Robbinsdale" || location == "Plymouth" || location == "Minneapolis")
+                {
+                    locationChoice = (Locations)Enum.Parse(typeof(Locations), location);
+                }
+                else
+                {
+                    Console.WriteLine("Sorry, we don't have a shop there. Eligible locations are Minneapolis, Robbinsdale, Hopkins, and Plymouth");
+                }
+            }
+
+
+            DBInterface.GettingMenu();
+            string name = "";
+            bool gotName = false;
+            do
+            {
+                if (name == "" || name == null)
+                {
+                    Console.WriteLine("Please enter your name for our records");
+                    name = Console.ReadLine()!;
+                }
+                else
+                {
+                    gotName = true;
+                }
+
+            } while (gotName != true);
+
+
+            bool done = false;
+            List<Product> cart = new();
+
+            Order thisOrder = new(cart, locationChoice);
+            while (done != true)
+            {
+                thisOrder.AddToCart();
+            }
+
+            Customer thisCustomer = new(name!);
+            thisOrder.FinalizeOrder(thisOrder, thisCustomer);
         }
     }
 }

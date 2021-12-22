@@ -9,8 +9,8 @@ namespace TravisB_P0
 {
     public class Product
     {
-        public Products productName{ get; }
-        private int quantity;
+        public Products productName{ get; set; }
+        public int quantity { get; set; }
 
         public Product(Products Item, int quantity)
         {

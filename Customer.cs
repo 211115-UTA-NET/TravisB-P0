@@ -7,18 +7,17 @@ using System.Data.SqlClient;
 
 namespace TravisB_P0
 {
-    public class Customer : Person
+    public class Customer
     {
-        private string _firstName;
-        private string _lastName;
-        public Customer(string firstName, string lastName) : base(firstName, lastName)
+        private string _Name;
+        public Customer(string Name)
         {
-            this._firstName = firstName;
-            this._lastName = lastName;
+            this._Name = Name;
         }
 
-        public string firstName { get { return _firstName; } }
-        public string lastName { get { return _lastName;} }
+        
+
+        public string firstName { get { return _Name; } }
 
 
     }

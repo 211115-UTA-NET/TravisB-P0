@@ -52,9 +52,15 @@ VALUES
 CREATE TABLE Customers
 (
     CustomerID SMALLINT IDENTITY PRIMARY KEY,
-    FirstName NVARCHAR(100) NOT NULL,
-    LastName NVARCHAR(100) NOT NULL
-)
+    CustomerName NVARCHAR(200) NOT NULL UNIQUE
+);
 
-ALTER TABLE Locations
-DROP COLUMN Manager
+CREATE TABLE Orders
+(
+    OrderID INT IDENTITY,
+    CustomerName NVARCHAR(200) FOREIGN KEY REFERENCES Customers(CustomerName) NOT NULL,
+    LocationID TINYINT NOT NULL,
+    ItemID INT NOT NULL,
+    QuantityOrdered SMALLINT NOT NULL,
+    PRIMARY KEY (OrderID, ItemID)
+);

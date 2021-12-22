@@ -9,7 +9,7 @@ namespace TravisB_P0
 {
     public enum Locations
     {
-        MapleGrove = 1,
+        Hopkins = 1,
         Plymouth = 2, 
         Robbinsdale = 3, 
         Minneapolis = 4
